@@ -1,0 +1,22 @@
+<h2>JSON Compare</h2>
+<p>Highlighted differences between two JSON objects.</p>
+
+<div class="diff-container">
+  <textarea rows="10" placeholder="JSON 1" [(ngModel)]="json1"></textarea>
+  <textarea rows="10" placeholder="JSON 2" [(ngModel)]="json2"></textarea>
+</div>
+
+<div style="margin: 15px 0">
+  <button (click)="compare()">Compare</button>
+</div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="leftHtml && rightHtml">
+  <p><strong>Total mismatches:</strong> {{ mismatchCount }}</p>
+
+  <div class="diff-container">
+    <div class="diff-box" [innerHTML]="leftHtml"></div>
+    <div class="diff-box" [innerHTML]="rightHtml"></div>
+  </div>
+</div>

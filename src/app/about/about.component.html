@@ -1,0 +1,60 @@
+<div class="about-container">
+  <div class="hero-section">
+    <h1>JSON Tools</h1>
+    <p class="tagline">Your Complete JSON Solution</p>
+  </div>
+  
+  <section class="info-section">
+    <h2>Welcome to JSON Tools</h2>
+    <p>JSON Tools is a comprehensive web application designed to help developers work with JSON data efficiently. Whether you need to format, compare, minify, or explore JSON structures, we've got you covered.</p>
+  </section>
+
+  <section class="features-section">
+    <h2>✨ Features</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">✓</div>
+        <div class="feature-content">{{ feature }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="developers-section">
+    <h2>👥 Meet the Team</h2>
+    <div class="developers-grid">
+      <div class="developer-card" *ngFor="let dev of developers">
+        <div class="card-header">
+          <div class="avatar">{{ dev.name.charAt(0) }}</div>
+        </div>
+        <div class="dev-info">
+          <h3>{{ dev.name }}</h3>
+          <p class="role">{{ dev.role }}</p>
+          <div class="contact-links">
+            <a [href]="'mailto:' + dev.email" class="link-btn email-btn" title="Send Email">
+              ✉️ Email
+            </a>
+            <a [href]="dev.github" target="_blank" rel="noopener noreferrer" class="link-btn github-btn" title="GitHub">
+              🔗 GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="contact-section">
+    <h2>📧 Get in Touch</h2>
+    <p>Have questions or suggestions? We'd love to hear from you!</p>
+    <div class="contact-card">
+      <p>
+        <a href="mailto:info&#64;jsontoolsapp.com" class="contact-link">info&#64;jsontoolsapp.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 JSON Tools. All rights reserved.</p>
+  </footer>
+</div>

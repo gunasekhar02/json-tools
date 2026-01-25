@@ -1,1 +1,276 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  background: #ffffff;
+  color: #333333;
+}
+
+/* Common container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Textareas */
+textarea {
+  width: 100%;
+  background: #f8f9fa;
+  color: #333333;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 14px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #0066ff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+/* Buttons */
+button {
+  background: #0066ff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 102, 255, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 102, 255, 0.2);
+}
+
+button:disabled {
+  background: #6699ff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button.secondary {
+  background: #6c757d;
+  color: #ffffff;
+}
+
+button.secondary:hover {
+  background: #5a6268;
+}
+
+/* Error and Success messages */
+.error {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border: 1px solid #f5c6cb;
+}
+
+.success {
+  color: #155724;
+  background: #d4edda;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border: 1px solid #c3e6cb;
+}
+
+/* Navigation */
+nav {
+  background: #ffffff;
+  padding: 14px 20px;
+  border-bottom: 2px solid #e0e0e0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #e8f4f8;
+  color: #0066cc;
+}
+
+nav a.active {
+  background: #0066ff;
+  color: #ffffff;
+  border-bottom: 3px solid #0052cc;
+}
+
+/* JSON syntax colors */
+.json-key {
+  color: #d63384;
+}
+
+.json-string {
+  color: #0066cc;
+}
+
+.json-number {
+  color: #002eff;
+}
+
+.json-boolean {
+  color: #008000;
+}
+
+.json-null {
+  color: #808080;
+}
+
+/* JSON output box */
+.json-output {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 14px;
+  overflow: auto;
+  white-space: pre;
+  max-height: 500px;
+}
+
+/* Compare highlights */
+.diff-added {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.diff-removed {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.diff-changed {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.diff-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .diff-container {
+    grid-template-columns: 1fr;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
+
+.diff-box {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow: auto;
+}
+
+/* jsondiffpatch base */
+.jsondiffpatch-delta {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* ADDED */
+.jsondiffpatch-added {
+  background: #d4edda;
+  color: #155724;
+  font-weight: bold;
+}
+
+/* REMOVED */
+.jsondiffpatch-deleted {
+  background: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+}
+
+/* CHANGED */
+.jsondiffpatch-modified {
+  background: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+}
+
+/* PROPERTY NAME */
+.jsondiffpatch-property-name {
+  color: #0b3c8c;
+  font-weight: bold;
+}
+
+/* VALUES */
+.jsondiffpatch-value {
+  color: #333;
+}
+
+/* ARRAY MOVES (optional) */
+.jsondiffpatch-movedestination {
+  background: #cfe2ff;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  textarea {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
