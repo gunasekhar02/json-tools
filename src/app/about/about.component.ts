@@ -14,7 +14,7 @@ export class AboutComponent {
       name: 'Guna Sekhar Reddy Peddireddygari',
       role: 'Full Stack Developer in GEP Worldwide',
       email: 'guna.devcodes@gmail.com',
-      github: 'https://github.com/yourrepo'
+      github: 'https://github.com/gunasekhar02'
     }
   ];
 
