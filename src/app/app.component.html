@@ -1,5 +1,8 @@
 <nav>
   <div class="nav-links">
+    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
     <a routerLink="/json-formatter" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
       JSON Formatter
     </a>
@@ -15,6 +18,4 @@
   </a>
 </nav>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<div class="container"> <router-outlet></router-outlet> </div>

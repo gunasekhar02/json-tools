@@ -11,9 +11,9 @@ import { CommonModule } from '@angular/common';
 export class AboutComponent {
   developers = [
     {
-      name: 'Development Team',
-      role: 'Full Stack Developer',
-      email: 'info@jsontoolsapp.com',
+      name: 'Guna Sekhar Reddy Peddireddygari',
+      role: 'Full Stack Developer in GEP Worldwide',
+      email: 'guna.devcodes@gmail.com',
       github: 'https://github.com/yourrepo'
     }
   ];
