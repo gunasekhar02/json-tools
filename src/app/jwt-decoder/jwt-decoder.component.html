@@ -1,0 +1,40 @@
+<h1>JWT Decoder</h1>
+<p class="description">
+  Decode JWT tokens to view header and payload. No validation or signature verification.
+</p>
+
+<textarea
+  [(ngModel)]="jwtToken"
+  placeholder="Paste JWT token here..."
+  rows="5">
+</textarea>
+
+<div class="actions">
+  <button (click)="decodeToken()">Decode</button>
+  <button class="secondary" (click)="clear()">Clear</button>
+</div>
+
+<div *ngIf="error" class="error">
+  ❌ {{ error }}
+</div>
+<div *ngIf="copySuccess" class="success">
+  ✅ {{ copyMessage }}
+</div>
+
+
+<div *ngIf="header" class="output">
+  <div class="output-header">
+    <h2>Header</h2>
+    <button class="copy-btn" (click)="copy(header, 'Header')">📋 Copy</button>
+  </div>
+  <pre>{{ header | json }}</pre>
+</div>
+
+<div *ngIf="payload" class="output">
+  <div class="output-header">
+    <h2>Payload</h2>
+        <button class="copy-btn" (click)="copy(payload, 'Payload')">📋 Copy</button>
+  </div>
+  <pre>{{ payload | json }}</pre>
+</div>
+

@@ -1,4 +1,4 @@
-h2 {
+/* h2 {
   color: #333;
   margin-bottom: 10px;
 }
@@ -81,4 +81,54 @@ textarea {
   border-radius: 6px;
   margin-top: 10px;
   border: 1px solid #f5c6cb;
+} */
+
+.dom-view-container {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.node {
+  margin-left: 16px;
+  line-height: 1.4;
+}
+
+.toggle {
+  cursor: pointer;
+  margin-right: 4px;
+  color: #2563eb;
+}
+
+.child {
+  margin-left: 16px;
+}
+
+.array-label, .object-label {
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.value {
+  color: #34d399;
+}
+
+.json-key {
+  color: #60a5fa;
+}
+
+.copy-btn {
+  margin-left: 5px;
+  font-size: 10px;
+  padding: 0 4px;
+  cursor: pointer;
+  border: none;
+  background: #6b7280;
+  color: white;
+  border-radius: 3px;
+}
+
+.success {
+  color: #16a34a;
+  font-weight: 500;
+  margin-top: 8px;
 }

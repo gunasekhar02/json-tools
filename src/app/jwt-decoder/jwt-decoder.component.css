@@ -1,0 +1,75 @@
+h1 {
+  margin-bottom: 6px;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+}
+
+button.secondary {
+  background: #6b7280;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  margin-top: 12px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.output {
+  margin-top: 20px;
+}
+
+.output h2 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+
+.success {
+  margin-top: 10px;
+  color: #16a34a;
+  font-weight: 500;
+}
