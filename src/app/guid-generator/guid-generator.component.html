@@ -1,0 +1,21 @@
+<h1>GUID / UUID Generator</h1>
+<p>Generate unique GUIDs (UUID v4) for your development needs.</p>
+
+<div class="input-section">
+  <label>
+    Number of GUIDs: 
+    <input type="number" min="1" [(ngModel)]="count">
+  </label>
+</div>
+
+<div class="actions">
+  <button (click)="generate()">Generate</button>
+  <button class="secondary" (click)="clear()">Clear</button>
+  <button *ngIf="guids.length" (click)="copy()">📋 Copy</button>
+</div>
+
+<div *ngIf="copySuccess" class="success">✅ GUIDs copied to clipboard!</div>
+
+<div *ngIf="guids.length" class="output">
+  <pre>{{ guids.join('\n') }}</pre>
+</div>

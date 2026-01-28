@@ -15,6 +15,7 @@ export class FormatterComponent {
   error: string = '';
   formattedHtml: string = '';
   copySuccess: boolean = false;
+  
 
   constructor(private jsonUtil: JsonUtilService) {}
 

@@ -1,0 +1,26 @@
+<h1>JSON to C# Model</h1>
+<p>Convert JSON into C# classes instantly.</p>
+
+<textarea
+  rows="12"
+  placeholder="Paste JSON here..."
+  [(ngModel)]="inputJson">
+</textarea>
+
+<div class="actions">
+  <button (click)="generate()">Generate</button>
+  <button class="secondary" (click)="clear()">Clear</button>
+  <button *ngIf="output" (click)="copy()">📋 Copy</button>
+</div>
+<div *ngIf="copySuccess" class="success">
+  ✅ Copied to clipboard!
+</div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<textarea
+  *ngIf="output"
+  rows="14"
+  [value]="output"
+  readonly>
+</textarea>

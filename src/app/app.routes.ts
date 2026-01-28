@@ -4,6 +4,9 @@ import { ComparerComponent } from './comparer/comparer.component';
 import { DomViewComponent } from './domview/domview.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { JwtDecoderComponent } from './jwt-decoder/jwt-decoder.component';
+import { JsonToCsharpComponent } from './json-to-csharp/json-to-csharp.component';
+import { GuidGeneratorComponent } from './guid-generator/guid-generator.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'json-formatter', pathMatch: 'full' },
@@ -11,6 +14,8 @@ export const routes: Routes = [
   { path: 'json-compare', component: ComparerComponent },
   { path: 'json-domview', component: DomViewComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'home', component: HomeComponent }, 
-
+  { path: 'home', component: HomeComponent },
+  { path: 'jwt-decoder',component: JwtDecoderComponent},
+  { path: 'json-to-csharp', component: JsonToCsharpComponent },
+  { path: 'guid-generator', component: GuidGeneratorComponent }
 ];

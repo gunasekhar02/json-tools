@@ -1,4 +1,4 @@
-<h2>JSON DOM View</h2>
+<!-- <h2>JSON DOM View</h2>
 <p>Paste your JSON and explore it as a collapsible tree structure.</p>
 
 <div style="margin-top: 20px">
@@ -53,6 +53,81 @@
             <ng-container *ngTemplateOutlet="renderNode; context:{ $implicit: node[key] }"></ng-container>
           </div>
         </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-template> -->
+
+<h2>JSON DOM View</h2>
+<p>Paste your JSON and explore it as a collapsible tree structure.</p>
+
+<div style="margin-top: 20px">
+  <textarea
+    rows="10"
+    placeholder="Paste your JSON here..."
+    [(ngModel)]="inputJson">
+  </textarea>
+</div>
+
+<div style="margin: 15px 0">
+  <button (click)="loadJson()">Load</button>
+  <button class="secondary" (click)="clear()">Clear</button>
+</div>
+
+<div *ngIf="copySuccess" class="success">{{ copyMessage }}</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<!-- Render JSON tree -->
+<div *ngIf="json" style="margin-top: 20px">
+  <ng-container *ngTemplateOutlet="renderNode; context:{ $implicit: json, path: 'root' }"></ng-container>
+</div>
+
+<ng-template #renderNode let-node let-path="path">
+  <div class="dom-view-container">
+    <div class="node">
+
+      <!-- Toggle for objects/arrays -->
+      <span *ngIf="isObject(node) || isArray(node)" class="toggle" (click)="toggle(node)">
+        {{ node._expanded ? '▼' : '▶' }}
+      </span>
+
+      <!-- Labels -->
+      <span *ngIf="isArray(node)" class="array-label">
+        Array [{{ node.length }}]
+      </span>
+
+      <span *ngIf="isObject(node)" class="object-label">
+        Object
+      </span>
+
+      <!-- Primitive value -->
+      <span *ngIf="!isObject(node) && !isArray(node)" class="value">
+        {{ node }}
+      </span>
+
+      <!-- Children -->
+      <div *ngIf="(isArray(node) || isObject(node)) && node._expanded" class="children">
+
+        <!-- Array children -->
+        <ng-container *ngIf="isArray(node)">
+          <div class="child" *ngFor="let item of node; let i = index">
+            <span class="array-index">[{{ i }}]:</span>
+            <!-- Only copy path for array index property -->
+            <button class="copy-btn" (click)="copyPath(path + '[' + i + ']')">📋</button>
+            <ng-container *ngTemplateOutlet="renderNode; context:{ $implicit: item, path: path + '[' + i + ']' }"></ng-container>
+          </div>
+        </ng-container>
+
+        <!-- Object children -->
+        <ng-container *ngIf="isObject(node)">
+          <div class="child" *ngFor="let key of objectKeys(node)">
+            <span class="json-key">"{{ key }}"</span>:
+            <!-- Copy only for property (key), not its value) -->
+            <button class="copy-btn" (click)="copyPath(path + '.' + key)">📋</button>
+            <ng-container *ngTemplateOutlet="renderNode; context:{ $implicit: node[key], path: path + '.' + key }"></ng-container>
+          </div>
+        </ng-container>
+
       </div>
     </div>
   </div>
