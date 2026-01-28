@@ -17,13 +17,4 @@ export class AboutComponent {
       github: 'https://github.com/gunasekhar02'
     }
   ];
-
-  features = [
-    'Format JSON with syntax highlighting',
-    'Compare two JSON objects and visualize differences',
-    'Minify JSON for optimization',
-    'DOM Tree View for exploring JSON structure',
-    'Copy formatted JSON to clipboard',
-    'Real-time JSON validation'
-  ];
 }

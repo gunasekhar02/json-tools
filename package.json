@@ -1,14 +1,13 @@
 {
   "name": "json-tools",
   "version": "0.0.0",
-
   "scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-  "build": "ng build --configuration production",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test"
-},
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.1.0",
@@ -22,6 +21,7 @@
     "jsondiffpatch": "^0.7.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "@angular/cli": "^18.1.2",
     "@angular/compiler-cli": "^18.1.0",
     "@types/jasmine": "~5.1.0",
+    "@types/xlsx": "^0.0.36",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
