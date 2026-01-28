@@ -1,0 +1,45 @@
+<h2>JSON Merger</h2>
+<p>Provide multiple JSONs, add them, and merge into one.</p>
+
+<!-- Input JSON -->
+<div style="margin-top: 20px">
+  <textarea
+    rows="6"
+    placeholder="Paste your JSON here..."
+    [(ngModel)]="newJson">
+  </textarea>
+</div>
+
+<div style="margin: 10px 0">
+  <button (click)="addJson()">➕ Add JSON</button>
+  <button class="secondary" (click)="clearAll()">Clear All</button>
+</div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<!-- List of added JSONs -->
+<div *ngIf="jsonList.length">
+  <h3>Added JSONs</h3>
+  <div *ngFor="let j of jsonList; let i = index" style="margin-bottom:10px; border:1px solid #ccc; padding:5px; border-radius:5px;">
+    <strong>JSON {{ i + 1 }}</strong>
+    <button style="float:right;" (click)="removeJson(i)">❌ Remove</button>
+    <pre>{{ j | json }}</pre>
+  </div>
+</div>
+
+<!-- Merge Button -->
+<div *ngIf="jsonList.length" style="margin-top: 15px">
+  <button (click)="mergeJsons()">🔗 Merge JSONs</button>
+</div>
+
+<!-- Merged JSON -->
+<div *ngIf="mergedJson" style="margin-top: 20px">
+  <h3>Merged JSON</h3>
+  <textarea 
+    rows="12" 
+    [(ngModel)]="mergedJson" 
+    readonly
+    style="width:100%; font-family: monospace; background:#f9fafb; border:1px solid #d1d5db; padding:0.5rem; border-radius:6px;">
+  </textarea>
+  <button style="margin-top:5px;" (click)="copyMergedJson()">📋 Copy Merged JSON</button>
+</div>

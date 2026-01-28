@@ -1,0 +1,28 @@
+<h2>Excel to JSON Converter</h2>
+<p>Upload an Excel file to convert it to JSON instantly. Supported formats: <strong>.xls, .xlsx</strong></p>
+
+<div style="margin-top: 20px">
+  <input 
+    type="file" 
+    (change)="handleFile($event)" 
+    accept=".xlsx,.xls" 
+  />
+</div>
+
+<div style="margin: 15px 0">
+  <button (click)="copyToClipboard()" [disabled]="!jsonOutput">📋 Copy JSON</button>
+  <button class="secondary" (click)="clear()">Clear</button>
+</div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<!-- JSON Output -->
+<div *ngIf="jsonOutput" style="margin-top: 20px">
+  <label><strong>Converted JSON:</strong></label>
+  <textarea 
+    rows="15" 
+    [(ngModel)]="jsonOutput" 
+    readonly
+    style="width:100%; font-family: monospace; background:#f9fafb; border:1px solid #d1d5db; padding:0.5rem; border-radius:6px;">
+  </textarea>
+</div>
